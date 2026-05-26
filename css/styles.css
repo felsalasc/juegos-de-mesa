@@ -1,0 +1,149 @@
+
+:root {
+  --color-principal: #7b3f00;
+  --color-secundario: #d8a15d;
+  --color-fondo: #f5efe6;
+  --texto: #333;
+  --blanco: #fff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--texto);
+}
+
+header{
+  background-color: var(--color-principal);
+  color: white;
+  text-align:center;
+  padding:30px;
+  animation: aparecer 1s ease;
+}
+
+nav{
+  background-color: var(--color-secundario);
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:15px;
+  flex-wrap: wrap;
+}
+
+nav a{
+  color:#222;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+nav a:hover{
+  transform:scale(1.1);
+}
+
+.container{
+  width:90%;
+  margin:auto;
+  padding:30px 0;
+}
+
+.categorias, .juegos{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:10px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+  animation: subir 0.8s ease;
+}
+
+.card img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+.card img:hover{
+  transform:scale(1.03);
+}
+
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  background:var(--color-principal);
+  color:white;
+  padding:10px;
+  border-radius:5px;
+  text-decoration:none;
+}
+
+.precio{
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.descuento{
+  color:green;
+}
+
+footer{
+  background:var(--color-principal);
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
+
+@keyframes aparecer{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes subir{
+  from{
+    transform:translateY(20px);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes brillo{
+  from{filter:brightness(90%);}
+  to{filter:brightness(110%);}
+}
+
+.card img{
+  animation: brillo 2s infinite alternate;
+}
+
+@media(max-width:900px){
+  .categorias, .juegos{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .categorias, .juegos{
+    grid-template-columns:1fr;
+  }
+
+  nav{
+    flex-direction:column;
+    align-items:center;
+  }
+}
