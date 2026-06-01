@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4efe7;
+  color: #2b2118;
+}
+
+.header {
+  background: #5a3218;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 15px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  background: #8b5a2b;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu .activo {
+  background: #d6a354;
+  color: #2b2118;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 850px;
+  margin: 35px auto;
+}
+
+.formulario-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.formulario-card h2 {
+  text-align: center;
+  color: #5a3218;
+  margin-bottom: 10px;
+}
+
+.formulario-card p {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.grupo {
+  margin-bottom: 18px;
+}
+
+.grupo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.grupo input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.grupo input:focus {
+  outline: none;
+  border-color: #8b5a2b;
+  background: #fffaf3;
+}
+
+.grupo.correcto input {
+  border-color: #2e8b57;
+}
+
+.grupo.incorrecto input {
+  border-color: #c0392b;
+  background: #fff2f2;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  display: block;
+  margin-top: 5px;
+}
+
+.botones {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.enviar {
+  background: #5a3218;
+  color: white;
+}
+
+.enviar:hover {
+  background: #8b5a2b;
+}
+
+.limpiar {
+  background: #d6a354;
+  color: #2b2118;
+}
+
+.limpiar:hover {
+  background: #c18c3d;
+}
+
+#mensajeFinal {
+  margin-top: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 600px) {
+  .formulario-card {
+    padding: 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .botones {
+    flex-direction: column;
+  }
+}
+
+/* Pantallas medianas */
+@media (min-width: 601px) and (max-width: 900px) {
+  .contenedor {
+    width: 85%;
+  }
+
+  .formulario-card {
+    padding: 25px;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 901px) {
+  .formulario-card {
+    padding: 35px;
+  }
+}
