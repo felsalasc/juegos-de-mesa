@@ -1,0 +1,77 @@
+body {
+  background-color: #f8f5ef;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  background-color: #4b2e1e;
+}
+
+.navbar-brand,
+.nav-link,
+.navbar span {
+  color: #ffffff !important;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("../img/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.btn-primary {
+  background-color: #7b4f2c;
+  border-color: #7b4f2c;
+}
+
+.btn-primary:hover {
+  background-color: #5a371f;
+  border-color: #5a371f;
+}
+
+footer {
+  background-color: #4b2e1e;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+.mensaje-error {
+    color: #dc3545;
+    font-size: 0.75rem; /* 12px */
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.campo-error {
+    border: 2px solid #dc3545 !important;
+    background-color: #fff5f5;
+}
+.form-control.campo-error {
+    margin-bottom: 2px;
+}
