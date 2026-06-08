@@ -1,31 +1,73 @@
 const formRecuperar = document.getElementById("formRecuperar");
 
+function limpiarErrores() {
+
+    document.querySelectorAll(".campo-error").forEach(campo => {
+        campo.classList.remove("campo-error");
+    });
+
+    document.querySelectorAll(".mensaje-error").forEach(error => {
+        error.remove();
+    });
+}
+
+function mostrarError(idCampo, mensaje) {
+
+    const campo = document.getElementById(idCampo);
+
+    campo.classList.add("campo-error");
+
+    const error = document.createElement("div");
+    error.className = "mensaje-error";
+    error.textContent = mensaje;
+
+    campo.insertAdjacentElement("afterend", error);
+}
+
 if (formRecuperar) {
-  formRecuperar.addEventListener("submit", (e) => {
-    e.preventDefault();
 
-    try {
-      const email = document.getElementById("email").value.trim();
+    formRecuperar.addEventListener("submit", (e) => {
 
-      if (!email) {
-        alert("Debes ingresar tu correo.");
-        return;
-      }
+        e.preventDefault();
 
-      const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-      const usuario = usuarios.find(u => u.email === email);
+        limpiarErrores();
 
-      if (!usuario) {
-        alert("No existe un usuario registrado con ese correo.");
-        return;
-      }
+        const email = document.getElementById("email").value.trim();
 
-      alert("Solicitud procesada. Se simula el envío de recuperación de contraseña.");
-      window.location.href = "login.html";
+        if (!email) {
 
-    } catch (error) {
-      console.error("Error recuperando contraseña:", error);
-      alert("No se pudo procesar la recuperación.");
-    }
-  });
+            mostrarError(
+                "email",
+                "Debes ingresar un correo electrónico."
+            );
+
+            return;
+        }
+
+        const usuarios = JSON.parse(
+            localStorage.getItem("usuarios")
+        ) || [];
+
+        const usuario = usuarios.find(
+            u => u.email === email
+        );
+
+        if (!usuario) {
+
+            mostrarError(
+                "email",
+                "No existe una cuenta asociada a este correo."
+            );
+
+            return;
+        }
+
+        alert(
+            "Solicitud procesada correctamente. (Simulación de recuperación de contraseña)"
+        );
+
+        window.location.href = "login.html";
+
+    });
+
 }
